@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 
 import com.testfairy.obb.sdk.Config;
-import com.testfairy.obb.sdk.license.TestFairyApkExpansionPolicy;
+import com.testfairy.obb.sdk.license.TFApkExpansionPolicy;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,7 +21,7 @@ import java.util.Map;
 public class GetObbRequirementsRequestTask extends HttpJsonGetRequestTask {
 
 	public interface OnResult {
-		void onResult(TestFairyApkExpansionPolicy.OBBData[] result);
+		void onResult(TFApkExpansionPolicy.OBBData[] result);
 		void onError();
 	}
 
@@ -88,7 +88,7 @@ public class GetObbRequirementsRequestTask extends HttpJsonGetRequestTask {
 				return;
 			}
 
-			List<TestFairyApkExpansionPolicy.OBBData> obbList = new ArrayList<>(data.length());
+			List<TFApkExpansionPolicy.OBBData> obbList = new ArrayList<>(data.length());
 			for (int i = 0; i < data.length(); i++) {
 				JSONObject jsonObject = data.optJSONObject(i);
 				if (jsonObject != null) {
@@ -101,7 +101,7 @@ public class GetObbRequirementsRequestTask extends HttpJsonGetRequestTask {
 						String type = jsonObject.getString("type");
 						String uploadedAt = jsonObject.getString("uploadedAt");
 
-						obbList.add(new TestFairyApkExpansionPolicy.OBBData(downloadUrl, filename, filesize, type));
+						obbList.add(new TFApkExpansionPolicy.OBBData(downloadUrl, filename, filesize, type));
 					} catch (JSONException e) {
 						Log.e(LOG_TAG, "Cannot parse json", e);
 						onResult.onError();
@@ -110,7 +110,7 @@ public class GetObbRequirementsRequestTask extends HttpJsonGetRequestTask {
 				}
 			}
 
-			TestFairyApkExpansionPolicy.OBBData[] obbData = obbList.toArray(new TestFairyApkExpansionPolicy.OBBData[obbList.size()]);
+			TFApkExpansionPolicy.OBBData[] obbData = obbList.toArray(new TFApkExpansionPolicy.OBBData[obbList.size()]);
 			onResult.onResult(obbData);
 		}
 	}

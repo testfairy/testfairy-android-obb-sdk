@@ -4,6 +4,7 @@ public class Config {
 	public static final String LOG_TAG = "TESTFAIRYSDK";
 
 	private static String APP_SERVER = "https://app.testfairy.com/services/";
+	private static String APP_TOKEN = "";
 
 	public static void setServerEndpoint(String newEndpoint) {
 		String appServerEndpoint = newEndpoint;
@@ -28,5 +29,13 @@ public class Config {
 
 	public static String getAppServerEndpoint() {
 		return APP_SERVER;
+	}
+
+	public static void setAppToken(String appToken) {
+		APP_TOKEN = appToken;
+	}
+
+	public static String getAppToken() {
+		return APP_TOKEN;
 	}
 }
