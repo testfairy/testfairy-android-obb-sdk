@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private synchronized void downloadObb() {
-		TestFairyObb.prepareObb(this, "SDK-XXXX", Policy.ALWAYS_DOWNLOAD_LATEST, new TestFairyObb.Callback() {
+		TestFairyObb.prepareObb(this, "SDK-XXXX", Policy.DOWNLOAD_ONLY_IF_REQUIRED, new TestFairyObb.Callback() {
 			@Override
 			public void onObbReady() {
 				startApp();
