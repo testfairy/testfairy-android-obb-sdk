@@ -57,7 +57,7 @@ Manifest.permission.REQUEST_INSTALL_PACKAGES
 
 [See example](./app/src/main/java/com/testfairy/obb/app/MainActivity.java).
 
-8. Prepare your app so that it allows access to the OBB folders when app is not installed from Google Play. Make sure you only do this when you distribute your app with TestFairy. In productions, users don't have to change this setting to be able to download the original OBB files from Google Play.
+8. Prepare your app so that it allows access to the OBB folders when app is not installed from Google Play. Make sure you only do this when you distribute your app with TestFairy. In production, users don't have to change this setting to be able to download the original OBB files from Google Play.
 
 ```java
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !getPackageManager().canRequestPackageInstalls()) {
