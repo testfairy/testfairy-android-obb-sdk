@@ -9,5 +9,3 @@ dependencyResolutionManagement {
 rootProject.name = "testfairy-android-obb-sdk"
 include ':app'
 include ':library'
-include ':GooglePlayLicenseLibrary'
-include ':GooglePlayDownloaderLibrary'
