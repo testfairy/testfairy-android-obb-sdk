@@ -44,7 +44,11 @@ include ':testfairy-obb' // Change the name if necessary
 6. Add the following dependency to your app's **build.gradle** file.
 
 ```gradle
-api project(path: ':testfairy-obb') // Change the name if necessary
+dependencies {
+    ...
+
+    api project(path: ':testfairy-obb') // Change the name if necessary
+}
 ```
 
 7. Prepare your app so that it asks runtime permissions for following items.
